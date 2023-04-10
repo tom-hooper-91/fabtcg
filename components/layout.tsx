@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 
 const name = 'Tom Hooper';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = 'FAB Cards';
 
 export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (

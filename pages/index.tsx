@@ -1,15 +1,12 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import axios from 'axios';
+import hydrateCards from '@/utils/converter';
 
-axios.get('https://api.fabdb.net/cards')
-.then((response) => {
-  console.log(response);
-})
-.catch((error) => {
-  console.log(error);
-});
+hydrateCards()
+.then(cards => console.log(cards))
+.catch(err => console.log(err))
+;
 
 export default function Home() {
   return (
