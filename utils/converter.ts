@@ -12,17 +12,15 @@ const hydrateCards = async ()  => {
   console.log('raw cards \n', cards)
 
   return cards.map((card: any) => {
-    let convertedCard: Card = {
-      id: card.unique_id,
-      name: card.name,
-      cost: card.cost,
-      pitch: card.pitch,
-      power: card.power,
-      defense: card.defense,
-      text: card.functional_text_plain
-    }
-
-    return convertedCard;
+    return new Card(
+      card.unique_id,
+      card.name,
+      card.cost,
+      3,
+      card.power,
+      card.defense,
+      card.functional_text_plain
+    )
   });
 }
 
