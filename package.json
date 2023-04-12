@@ -9,6 +9,7 @@
     "lint": "next lint",
     "server": "nodemon server/app.js"
   },
+  "proxy": "http://localhost:8080/api",
   "dependencies": {
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",

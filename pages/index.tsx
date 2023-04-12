@@ -1,14 +1,28 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import hydrateCards from '@/utils/converter';
-
-hydrateCards()
-.then(cards => console.log(cards))
-.catch(err => console.log(err))
-;
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => { 
+    fetch("https://localhost:8080/api/cards")
+      .then((response) => {
+        // handle success
+        console.log(response);
+        return response.json();
+      })
+      .then((data) => { 
+        console.log(data)
+        setCards(data);
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      })
+  })
+
   return (
     <Layout home>
       <Head>
