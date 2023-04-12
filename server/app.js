@@ -1,9 +1,9 @@
 var express = require("express");
 var app = express();
 
-app.get("/url", (req, res, next) => {
-  res.json(["Tony","Lisa","Michael","Ginger","Food"]);
- });
+const cardRoutes = require("./routes/cards");
+
+app.use("/cards", cardRoutes);
 
 app.listen(8080, () => {
  console.log("Server running on port 8080");
