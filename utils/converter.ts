@@ -16,7 +16,7 @@ const hydrateCards = async ()  => {
       card.unique_id,
       card.name,
       card.cost,
-      3,
+      card.pitch,
       card.power,
       card.defense,
       card.functional_text_plain
